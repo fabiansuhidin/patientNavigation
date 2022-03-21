@@ -1,0 +1,57 @@
+version: '3.4'
+
+services:
+  medications.api:
+    image: ${DOCKER_REGISTRY-}medicationsapi
+    build:
+      context: .
+      dockerfile: Medications.Api/Dockerfile
+
+  patient.api:
+    image: ${DOCKER_REGISTRY-}patientapi
+    build:
+      context: .
+      dockerfile: Patient.Api/Dockerfile
+
+
+  procedure.api:
+    image: ${DOCKER_REGISTRY-}procedureapi
+    build:
+      context: .
+      dockerfile: Procedure.Api/Dockerfile
+
+
+  appointment.api:
+    image: ${DOCKER_REGISTRY-}appointmentapi
+    build:
+      context: .
+      dockerfile: Appointment.Api/Dockerfile
+
+
+  patient.consumer:
+    image: ${DOCKER_REGISTRY-}patientconsumer
+    build:
+      context: .
+      dockerfile: Patient.Consumer/Dockerfile
+
+
+  procedure.consumer:
+    image: ${DOCKER_REGISTRY-}procedureconsumer
+    build:
+      context: .
+      dockerfile: Procedure.Consumer/Dockerfile
+
+
+  appointment.consumer:
+    image: ${DOCKER_REGISTRY-}appointmentconsumer
+    build:
+      context: .
+      dockerfile: Appointment.Consumer/Dockerfile
+
+
+  medications.consumer:
+    image: ${DOCKER_REGISTRY-}medicationsconsumer
+    build:
+      context: .
+      dockerfile: Medications.Consumer/Dockerfile
+
